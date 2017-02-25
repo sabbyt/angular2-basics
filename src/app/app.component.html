@@ -1,0 +1,37 @@
+<h1>
+  {{title}}
+</h1>
+<p>
+  One of four forms of data-binding.
+  Here is string interpolation.
+  Referring to properties of a class.
+  Has to be easily cast into a string - e.g. string, number and not an object.
+</p>
+<input type='text' value='age'>
+<input type='text' [value]='age'>
+<p>
+  Second form of data-binding.
+  Or property binding.
+  In the second input option - binding value of 'age' to the input property.
+</p>
+<p>
+  An example of event binding - third form of data-binding.
+  {{ getName() }}
+  Below will bind input to the getName()
+</p>
+<input type='text' [value]='getName()'>
+<button (click) ="age = 30">Click Me!</button>
+<button (click) ="setAge(30)">Click Me 2!</button>
+<p>
+  Last example.
+  Combines both event and property binding - changing as user inputs and updating. 
+  Will bind in two directions. TWO WAY BINDING.
+  {{person.dog}}
+</p>
+<input type='text' [(ngModel)]='title'>
+<input type='text' [(ngModel)]='person.dog'>
+<hr>
+<p *ngFor='let user of users'>{{user}}</p>
+<hr>
+<!--<app-users [users]='registeredUsers' (alertThrown)="onChildAlert($event)"></app-users>-->
+<app-users (alertThrown)="onChildAlert($event)"></app-users>
